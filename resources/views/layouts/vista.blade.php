@@ -13,7 +13,7 @@
         </section>
     <div>
         @include('includes.section')
-        <div class="mh-100" style="height:500px"></div>
+        @yield('content')
     </div>
     <section id="newsletter">
         <div class="wrapper">
