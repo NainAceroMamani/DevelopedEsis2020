@@ -1,4 +1,4 @@
-</div>
+
 <footer id="main-footer" style="font-size: 15px;line-height: 1.15;">
     <div class="wrapper">
         <article> 

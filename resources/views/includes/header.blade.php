@@ -15,7 +15,6 @@
         
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
             <div class="top-right links">
                 <nav id="main-nav" style="scroll-behavior: smooth;font-size:16px;">
                     <a href="#" id="logo">
