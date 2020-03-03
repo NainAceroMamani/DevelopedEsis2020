@@ -40,7 +40,6 @@
         </article>
 
         <nav id="footer-nav">
-
             <ul >
                 <li style="list-style: disc;margin-left: 20px;">
                   <a style="padding: 7px 5px;">Postmaster</a>
@@ -58,7 +57,6 @@
                   <a style="padding: 7px 5px;">Feria Tecnológica</a>
                 </li>
             </ul>
-
             <ul id="contact">
                 <li>
                   <a style="padding: 5px 0;" >CONTÁCTENOS</a>
@@ -81,7 +79,6 @@
             </ul>
         </nav>
     </div>
-
     <div>
       <p style="text-align:center;">Todos los Derechos Reservados 2019-2020 ©
           <a href="#" style="text-decoration:none;color:white;">
@@ -90,8 +87,7 @@
       </p>
  </div>
 </footer>
-<!-- inc_footer.php -->
-  <!-- scripts -->
+  
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="{{ asset('js/jquery.countdown.min.js') }}"></script>
   <script>

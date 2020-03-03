@@ -1,5 +1,6 @@
 
 @include('includes.header')            
+
     <div class="mh-100" style="height:70px"></div>
         <section class="seccion">
             <div class="cuenta-regresiva contenedor">
@@ -12,6 +13,9 @@
             </div>
         </section>
     <div>
+
     @include('includes.section')
+
     @yield('content')
+
 @include('includes.footer')

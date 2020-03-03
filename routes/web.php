@@ -11,10 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('partials.preInscripcion');
-});
-
-Auth::routes();
+Route::get('/', 'InicioController@preInscripcion');
+Route::post('/create', 'InicioController@create');
 
 Route::get('/home', 'HomeController@index')->name('home');
