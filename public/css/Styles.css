@@ -195,7 +195,7 @@ form label, h1, h2, h3, h4 {
 
 .wrapper {
     max-width: 1200px;
-    margin: 0 auto
+    margin: 0 auto;
 }
 
 section.alert {
@@ -238,7 +238,7 @@ ul.flashes .error {
     position: relative;
     padding-bottom: 56.25%;
     padding-top: 1px;
-    height: 0
+    height: 0;
 }
 
 .videoWrapper iframe {
@@ -308,7 +308,7 @@ p {
 @media (max-width:1200px) {
     .wrapper {
         padding-right: 5%!important;
-        padding-left: 5%!important
+        padding-left: 5%!important;
     }
 }
 
@@ -613,18 +613,18 @@ main section.half-img .wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap
+    flex-wrap: wrap;
 }
 
 main section.half-img .wrapper article.text {
-    width: 60%
+    width: 60%;
 }
 
 main section.half-img .wrapper article.img {
     width: 35%;
     display: flex;
     flex-wrap: wrap;
-    align-items: center
+    align-items: center;
 }
 
 main section.half-img .wrapper article.img div {
@@ -4529,4 +4529,32 @@ p.numero {
 }
 .seccion p {
     text-align: center;
+}
+
+section#newsletter {
+    background: linear-gradient(45deg, #005db2 0, #1991ff 100%);
+    padding: 35px 0;
+    text-align: center;
+    color: #fff;
+    font-size: 1.2em;
+}
+section {
+    display: block;
+}
+
+section#newsletter ul {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    list-style: none;   
+}
+
+section#newsletter ul li a {
+    color: rgba(255, 255, 255, .6);
+    transition: all .3s;
+    font-size: 1.5em;
+    display: block;
+    padding: 18px 35px;
 }
