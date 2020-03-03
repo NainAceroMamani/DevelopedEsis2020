@@ -4482,3 +4482,51 @@ footer#main-footer .wrapper nav#footer-nav ul li a:before {
         padding-top: 30px
     }
 }
+
+/** Ciis 2020 **/
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+/**Cuenta Regresiva**/
+div.cuenta-regresiva ul li{
+    text-transform: uppercase;
+    font-family: 'Oswald' , sans-serif;
+    font-size: 1.6rem;
+    text-align: center;
+    list-style: none;
+
+}
+@media only screen and (min-width: 768px){
+    div.cuenta-regresiva ul li{
+        width: 25%;
+        float: left;
+    }
+    div.cuenta-regresiva ul li > span{
+        font-size: 1rem;
+    }
+}
+
+.contenedor{
+    width: 98%;
+    margin: 0 auto;
+}
+
+div.clearfix{
+    font-weight: bold;
+}
+p.numero {
+    color: #fe4918;
+    font-size: 1.6em;
+    margin: 10px 0 10px 0;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+}
+.seccion p {
+    text-align: center;
+}

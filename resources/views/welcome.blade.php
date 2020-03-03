@@ -1,31 +1,19 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-        <script src="https://kit.fontawesome.com/882059baa9.js" crossorigin="anonymous"></script>
-        <!-- Styles -->
-        <link href="{{ asset('css/Styles.css') }}" rel="stylesheet">
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            <div class="top-right links">
-                @include('includes.header')
+@include('includes.header')            
+    <div class="mh-100" style="height:70px"></div>
+        <section class="seccion">
+            <div class="cuenta-regresiva contenedor">
+                <ul class="clearfix">
+                    <li><p id="dias" class="numero"></p> <span>días</span></li>
+                    <li><p id="horas" class="numero"></p> <span>horas</span></li>
+                    <li><p id="minutos" class="numero"></p> <span>minutos</span></li>
+                    <li><p id="segundos" class="numero"></p> <span>segundos</span></li>
+                </ul>
             </div>
-            <div class="mh-100" style="height:60px"></div>
-            <div class="">
-                @include('includes.section')
-                <div class="mh-100" style="height:500px"></div>
-            </div>
-            <div class="content">
-                @include('includes.footer')
-            </div>
-        </div>
-    </body>
-</html>
+        </section>
+    <div>
+        @include('includes.section')
+        <div class="mh-100" style="height:500px"></div>
+    </div>
+        
+@include('includes.footer')
