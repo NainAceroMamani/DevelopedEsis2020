@@ -4525,6 +4525,7 @@ p.numero {
     font-size: 1.5em;
     font-family: 'Oswald', sans-serif;
     font-weight: bold;
+    margin-bottom: -5px;
 }
 .seccion p {
     text-align: center;

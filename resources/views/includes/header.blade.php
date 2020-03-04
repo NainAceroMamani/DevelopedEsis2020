@@ -39,11 +39,11 @@
                     </ul>
                     
                     <a href="https://www.facebook.com/ciistacna/" id="call-to-action" target="_blank">
-                        <section class="seccion" style="width:400px">
+                        <section class="seccion" style="width:400px;margin-top:-15px">
                             <div class="cuenta-regresiva contenedor">
                                 <ul class="clearfix">
                                     <br>
-                                    <li><p id="dias" class="numero"></p> <span>días</span></li>
+                                    <li ><p id="dias" class="numero"></p> <span>días</span></li>
                                     <li><p id="horas" class="numero"></p> <span>horas</span></li>
                                     <li><p id="minutos" class="numero"></p> <span>minutos</span></li>
                                     <li><p id="segundos" class="numero"></p> <span>segundos</span></li>
