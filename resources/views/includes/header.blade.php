@@ -37,8 +37,20 @@
                             </ul>
                         </li>
                     </ul>
+                    
                     <a href="https://www.facebook.com/ciistacna/" id="call-to-action" target="_blank">
-                    <i class="fab fa-facebook" style="font-size: 28px;"></i> &nbsp; Síguenos en facebook</a>
+                        <section class="seccion" style="width:400px">
+                            <div class="cuenta-regresiva contenedor">
+                                <ul class="clearfix">
+                                    <br>
+                                    <li><p id="dias" class="numero"></p> <span>días</span></li>
+                                    <li><p id="horas" class="numero"></p> <span>horas</span></li>
+                                    <li><p id="minutos" class="numero"></p> <span>minutos</span></li>
+                                    <li><p id="segundos" class="numero"></p> <span>segundos</span></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </a>
                 </div>
             </nav>
         </div>

@@ -23,9 +23,26 @@
             @endif
         <div class="row">      
             <div class="col-12 col-sm-12 col-md-6 p-3">
-          
+                <div class="card opacityimg">
+                    <div class="card-body">
+                        This is some text within a card body.
+                    </div>  
+                </div>
+                <br>
+                <div class="card opacityimg">
+                    <div class="card-body">
+                        This is some text within a card body.
+                    </div>  
+                </div>
+                <br>
+                <div class="card opacityimg">
+                    <div class="card-body">
+                        This is some text within a card body.
+                    </div>  
+                </div>
+                <br>
             </div>
-            <div class="col-12 col-sm-12 col-md-6  p-2 opacity">       
+            <div class="col-12 col-sm-12 col-md-6  p-3 opacity">       
                 <div class="card-body text-center text-light">
                     <strong>  <h1 style="font-weight:bold"> Ficha de Pre-Inscripción</h1>  </strong>
                 </div>
@@ -119,6 +136,7 @@
                 </form>
             </div>
         </div>
+        <br>
     </div>
 </div>
 @endsection
