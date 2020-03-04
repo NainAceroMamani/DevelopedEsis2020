@@ -10,8 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function() {
+    return view('partials.index');
+});
 
-Route::get('/', 'InicioController@preInscripcion');
+Route::get('/preinscripcion', 'InicioController@preInscripcion');
 Route::post('/create', 'InicioController@create');
 
 Route::get('/home', 'HomeController@index')->name('home');

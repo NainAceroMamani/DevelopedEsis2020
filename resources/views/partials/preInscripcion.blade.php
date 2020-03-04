@@ -1,5 +1,5 @@
 @extends('layouts.vista')
-
+<div class="mh-100" style="height:65px"></div>
 @section('content')
 
 <div class="flex-center position-ref full-height gradient " style="margin:auto">
