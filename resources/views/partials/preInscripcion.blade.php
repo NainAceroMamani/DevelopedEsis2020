@@ -22,27 +22,7 @@
                 </div>
             @endif
         <div class="row">      
-            <div class="col-12 col-sm-12 col-md-6 p-3">
-                <div class="card opacityimg">
-                    <div class="card-body">
-                        This is some text within a card body.
-                    </div>  
-                </div>
-                <br>
-                <div class="card opacityimg">
-                    <div class="card-body">
-                        This is some text within a card body.
-                    </div>  
-                </div>
-                <br>
-                <div class="card opacityimg">
-                    <div class="card-body">
-                        This is some text within a card body.
-                    </div>  
-                </div>
-                <br>
-            </div>
-            <div class="col-12 col-sm-12 col-md-6  p-3 opacity">       
+        <div class="col-12 col-sm-12 col-md-6  p-3 opacity">       
                 <div class="card-body text-center text-light">
                     <strong>  <h1 style="font-weight:bold"> Ficha de Pre-Inscripción</h1>  </strong>
                 </div>
@@ -134,6 +114,50 @@
                     </div>
                     <button type="submit" class="btn btn-primary">Registrarme al Ciis XXI</button>
                 </form>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 p-3" style="margin-top:-3%">
+                <br>
+                <div class="card opacityimg">
+                    <div class="card-body">
+                        <h2 class="text-center">Beneficios de los participantes</h2>
+                        <div class="row">
+                            <div class="col-12 col-sm-12 col-md-6 p-3">
+                                <div class="card h-100 rounded a_small Blurb">
+                                    <div class="card-body text-center">
+                                        <img src="{{ asset('img/recursos/201576.svg') }}" width="50px">
+                                        <h1 class="lead pb-3 mt-3  color-texto">Material de apuntes</h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-6 p-3">
+                                <div class="card h-100 rounded a_small Blurb">
+                                    <div class="card-body text-center">
+                                        <img src="{{ asset('img/recursos/201553.svg') }}" width="50px">
+                                        <h1 class="lead pb-3 mt-3  color-texto">Acceso a ponencias magistrales</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-sm-12 col-md-6 p-3">
+                                <div class="card h-100 rounded a_small Blurb">
+                                    <div class="card-body text-center">
+                                        <img src="{{ asset('img/recursos/236839.svg') }}" width="50px">
+                                        <h1 class="lead pb-3 mt-3  color-texto">Certificado de participación</h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-6 p-3">
+                                <div class="card h-100 rounded a_small Blurb">
+                                    <div class="card-body text-center">
+                                        <img src="{{ asset('img/recursos/school-bag-icon-1.png') }}" width="50px">
+                                        <h1 class="lead pb-3 mt-3  color-texto">Morral CIIS</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <br>
