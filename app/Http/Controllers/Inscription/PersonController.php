@@ -54,6 +54,7 @@ class PersonController extends Controller
         $name = '';
         $identification = $request->input('num_document');
         if($request->hasFile('link_photo')) {
+            
             $file = $request->file('link_photo');
             $name = time().$file->getClientOriginalName();
             $file->move(public_path().'/storage/'.$identification, $name);
