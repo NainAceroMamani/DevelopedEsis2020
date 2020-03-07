@@ -14,7 +14,15 @@ Route::get('/', function() {
     return view('partials.index');
 });
 
-Route::get('/preinscripcion', 'InicioController@preInscripcion');
-Route::post('/create', 'InicioController@create');
+Auth::routes();
+
+Route::get('inscription/create','Inscription\PersonController@create');
+Route::post('inscription','Inscription\PersonController@store');
+
+Route::resource('Admininscription', 'Admin\InscriptionController');
+Route::post('inscriptionConfirm/{inscription}/confirm', 'Admin\InscriptionController@inscriptionConfirm');
+Route::post('inscriptionConfirm/{inscription}/codigoConfirm', 'Admin\InscriptionController@codigoConfirm');
+Route::post('showcodigoConfirm', 'Admin\InscriptionController@showcodigoConfirm');
+
 
 Route::get('/home', 'HomeController@index')->name('home');
