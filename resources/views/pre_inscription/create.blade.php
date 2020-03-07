@@ -25,17 +25,11 @@
                 </div>
                 <form action="{{ url('inscription') }}" method="post" enctype="multipart/form-data">
                     @csrf
-                    <div class="form-group">
-                        <input type="text" name="name_person" request class="form-control" value="{{ old('name_person') }}" placeholder="Nombres Completo.">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="last_name_person" class="form-control" value="{{ old('last_name_person') }}" placeholder="Apellidos Completo.">
-                    </div>
                     <div class="row">
                         <div class="col">                          
                             <div class="form-group">
                                 <label style="color:#fff" for="type_document">Seleccione Tipo de Documento</label>
-                                <select class="form-control" name="type_document" required>
+                                <select class="form-control" name="type_document" required id="type_docuemnt">
                                     <option value="1">DNI</option>
                                     <option value="2">CARNET DE EXTRANJERIA</option>
                                     <option value="3">PASAPORTE</option>
@@ -47,10 +41,11 @@
                         <div class="col">
                             <div class="form-group">
                                 <label style="color:#fff" for="num_document">Ingrese su número Documento</label>
-                                <input type="text" name="num_document" class="form-control" required value="{{ old('num_document') }}">
+                                <input type="text" id="num_document" name="num_document" class="form-control" required value="{{ old('num_document') }}">
                             </div>
                         </div>
                     </div>
+                    
                     <div class="row">
                         <div class="col">
                             <div class="form-group">
@@ -74,6 +69,12 @@
                                 </select>
                             </div>
                         </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="name_person" id="name_person" request class="form-control" value="{{ old('name_person') }}" placeholder="Nombres Completo.">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="last_name_person" id = "last_name_person" class="form-control" value="{{ old('last_name_person') }}" placeholder="Apellidos Completo.">
                     </div>
                     <div class="row">
                         <div class="col">          
