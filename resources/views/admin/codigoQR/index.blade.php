@@ -61,12 +61,14 @@
             </div>
     <?php   }  $val++; } $dirint->close(); ?>
     
-    <a href="{{ url('codigoQrShow') }}">
-        <button type="button" class="btn btn-lg btn-default" >Mostrar Más</button>
-    </a>
+    </div>
+        <a href="{{ url('codigoQrShow') }}">
+            <button type="button" class="btn btn-lg btn-default" >Mostrar Más</button>
+        </a>
+    
     
      <?php } else { 
-
+    echo "<div class='row'>";
         while (($archivo = $dirint->read()) !== false) { $sub = substr($archivo, -3); $img = strstr($archivo, '.', true);; if ($sub == "png") { ?>
             <div class="col-md-4 col-sm-4 col-lg-3 col-xl-3">
             <div class="card shadow-none p-3 mb-5 bg-light rounded">
@@ -78,7 +80,6 @@
             </div>
         <?php   }   } $dirint->close();
     } ?>
-    </div>
     </div>
 </div>
 @endsection
