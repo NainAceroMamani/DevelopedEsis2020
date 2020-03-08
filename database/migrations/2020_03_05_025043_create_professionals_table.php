@@ -15,7 +15,7 @@ class CreateProfessionalsTable extends Migration
     {
         Schema::create('professionals', function (Blueprint $table) {
             $table->increments('id');
-            $table->String('grade_prefessional', '20')->nullable();
+            $table->String('grade_prefessional', '100')->nullable();
             $table->String('college', '80')->nullable();
             $table->String('code_qr', '120')->nullable();
             
