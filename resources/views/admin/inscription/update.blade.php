@@ -41,14 +41,14 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="payment_advanced">Pago Avanzado</label>
-                        <input type="text" name="payment_advanced" class="form-control" required value="{{ old('payment_advanced',
+                        <input type="text" name="payment_advanced" class="form-control" value="{{ old('payment_advanced',
                             $inscription->payment_advanced) }}" style="color:#000">
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="payment_inscription">Pago Inscripción</label>
-                        <input type="text" name="payment_inscription" class="form-control" required value="{{ old('payment_inscription',
+                        <input type="text" name="payment_inscription" class="form-control" value="{{ old('payment_inscription',
                             $inscription->payment_inscription) }}" style="color:#000">
                     </div> 
                 </div>
@@ -66,8 +66,8 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="payment_inscription">Código de Asistencia</label>
-                        <input type="text" name="code_assistance" class="form-control" required value="{{ old('code_assistance',
-                            $inscription->code_assistance) }}" style="color:#000">
+                        <input type="text" name="code_assistance" class="form-control" value="{{ old('code_assistance',
+                            $inscription->inscription->code_assistance) }}" style="color:#000">
                     </div> 
                 </div>
             </div>
@@ -76,8 +76,8 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="num_operation">Número de Operación</label>
-                        <input type="text" name="num_operation" class="form-control" required value="{{ old('num_operation',
-                            $inscription->num_operation) }}" style="color:#000">
+                        <input type="text" name="num_operation" class="form-control" value="{{ old('num_operation',
+                            $inscription->inscription->num_operation) }}" style="color:#000">
                     </div> 
                 </div>
                 <div class="col-md-6">          
@@ -123,12 +123,14 @@
                     <div class="form-group">
                         <div class="form-group">
                             <label for="payment_inscription">Apellido de Usuario</label>
-                            <input type="text" name="last_name_person" class="form-control" required value="{{ old('last_name_person',
+                            <input type="text" name="last_name_person" class="form-control" value="{{ old('last_name_person',
                                 $inscription->inscription->person->last_name_person) }}" style="color:#000">
                         </div> 
                     </div> 
                 </div>
             </div>
+            <input type="hidden" name="inscription_id" value="{{ $inscription->inscription->id }}">
+            <input type="hidden" name="person_id" value="{{ $inscription->inscription->person->id }}">
             <button type="submit" class="btn btn-primary">
                 Guardar
             </button>

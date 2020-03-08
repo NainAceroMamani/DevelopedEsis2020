@@ -15,9 +15,10 @@ Route::get('/', function() {
 });
 
 Auth::routes();
-
+    
 Route::get('/inscription/create','Inscription\PersonController@create');
 Route::post('/inscription','Inscription\PersonController@store');
+
 
 Route::middleware(['auth', 'Admin'])->group(function() {
     
