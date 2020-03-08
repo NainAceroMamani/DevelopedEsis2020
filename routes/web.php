@@ -16,13 +16,21 @@ Route::get('/', function() {
 
 Auth::routes();
 
-Route::get('inscription/create','Inscription\PersonController@create');
-Route::post('inscription','Inscription\PersonController@store');
+Route::get('/inscription/create','Inscription\PersonController@create');
+Route::post('/inscription','Inscription\PersonController@store');
 
-Route::resource('Admininscription', 'Admin\InscriptionController');
-Route::post('inscriptionConfirm/{inscription}/confirm', 'Admin\InscriptionController@inscriptionConfirm');
-Route::post('inscriptionConfirm/{inscription}/codigoConfirm', 'Admin\InscriptionController@codigoConfirm');
-Route::post('showcodigoConfirm', 'Admin\InscriptionController@showcodigoConfirm');
+Route::middleware(['auth', 'Admin'])->group(function() {
+    
+    Route::resource('/Admininscription', 'Admin\InscriptionController');
+    Route::post('/inscriptionConfirm/{inscription}/confirm', 'Admin\InscriptionController@inscriptionConfirm');
+    Route::post('/inscriptionConfirm/{inscription}/codigoConfirm', 'Admin\InscriptionController@codigoConfirm');
+    Route::post('/showcodigoConfirm', 'Admin\InscriptionController@showcodigoConfirm');
 
+    Route::get('/codigoQr', 'Admin\CodigoQRController@index');
+    Route::get('/codigoQrShow', 'Admin\CodigoQRController@show');
+    Route::post('/codigoQr/create', 'Admin\CodigoQRController@create');
+    Route::get('/dowloadCodigoQR', 'Admin\CodigoQRController@dowload');
+
+});
 
 Route::get('/home', 'HomeController@index')->name('home');
