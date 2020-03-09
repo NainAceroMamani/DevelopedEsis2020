@@ -79,7 +79,7 @@
         @endif
     <?php   }       // Fin del @if 
             else {  // @else en caso de haber presionado el botón => Mostrar Más
-    echo    "<div class='row'>";
+                echo    "<div class='row'>";
                 /* Ciclo While que recorre las imagenes del directorio Abierto */
                 while (($archivo = $dirint->read()) !== false) { 
                     $sub = substr($archivo, -3);            // Recorte de las 3 ultimas palabras 
@@ -98,7 +98,7 @@
             <?php   }               // Fin del @if   
                 }                   // Fin del @while
                 $dirint->close();  // Cerramos el directorio
-            } ?>                   <!-- Fin del @else --> 
+            } ?>                   <!-- Fin  --> 
             </div>
 </div>
 @endsection

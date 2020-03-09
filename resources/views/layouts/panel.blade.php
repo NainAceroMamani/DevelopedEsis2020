@@ -51,7 +51,7 @@
     
     <!-- Jquery JS-->
     
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     
     @yield('scripts')
     
@@ -97,15 +97,6 @@
     <script src="//vjs.zencdn.net/6.6.3/video.js"></script>
     <!-- Countdown JS-->
     <script src="{{ asset('js/jquery.countdown.min.js') }}"></script>
-
-    <script>
-    $('.cuenta-regresiva').countdown('2020/11/09 09:00:00' , function(event){
-            $('#dias').html(event.strftime('%D'));
-            $('#horas').html(event.strftime('%H'));
-            $('#minutos').html(event.strftime('%M'));
-            $('#segundos').html(event.strftime('%S'));
-        });
-    </script>
 
 </body>
 
