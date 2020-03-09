@@ -29,7 +29,7 @@ class PersonRequest extends FormRequest
         return [
             'name_person'       => 'required|max:60',
             'last_name_person'  => 'max:60',
-            'email_person'      => 'required|max:55|unique:people,email_person',
+            'email_person'      => 'max:55|unique:people,email_person|nullable',
             'type_document'     => 'required|max:45',
             'num_document'      => 'required|max:45|unique:people,num_document',
             'phone_person'      => 'max:18',

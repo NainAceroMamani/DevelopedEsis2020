@@ -108,7 +108,7 @@
                         placeholder="Correo Electrónico.">
                     </div>
                     <div class="form-group">
-                        <input type="text" name="college" class="form-control" required value="{{ old('college') }}"
+                        <input type="text" name="college" class="form-control" value="{{ old('college') }}"
                         placeholder="Ingrese su institución.">
                     </div>
                     <div class="form-group">

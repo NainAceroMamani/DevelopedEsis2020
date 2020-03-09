@@ -4,14 +4,13 @@
 <div class="card shadow">
     <div class="card-header border-0">
         <div class="row align-items-center">
-        <div class="col">
-            <h3 class="mb-0">Usuarios</h3>
-        </div>
-        <div class="col text-right">
-            <a href="{{ url('patients/create') }}" class="btn btn-sm btn-success">
-                Nueva Inscripción
-            </a>
-        </div>
+            <div class="col">
+                <h3 class="mb-0">{{ __('Usuarios') }}</h3>
+            </div>
+            <!-- Registrar Nueva Inscripción al Ciss -->
+            <div class="col text-right">
+                <a href="{{ url('Admininscription/create') }}" class="btn btn-sm btn-success">{{ __('Nueva Inscripción') }}</a>
+            </div>
         </div>
     </div>
     <div class="card-body">
@@ -22,84 +21,49 @@
         @endif
     </div>
     <div class="table-responsive">
-        <!-- Projects table -->
+        <!-- Tabla para lista a los Inscritos al Ciis -->
         <table class="table align-items-center table-flush">
         <thead class="thead-light">
             <tr>
-            <th scope="col">Nombre Completo</th>
-            <th scope="col">Documento</th>
-            <th scope="col">P. Avanzado</th>
-            <th scope="col">P. Inscripción</th>
-            <th scope="col">Código</th>
-            <th scope="col">Estado</th>
-            <th scope="col">Opciones</th>
+            <th scope="col">{{ __('Nombre Completo') }}</th>    <!-- Nombre Completo del Usuario -->
+            <th scope="col">{{ __('Documento') }}</th>          <!-- Documento del Usuario -->
+            <th scope="col">{{ __('P. Avanzado') }}</th>        <!-- Pago Avanzado del Usuario -->
+            <th scope="col">{{ __('P. Inscripción') }}</th>     <!-- Pago de Inscripción Usuario -->
+            <th scope="col">{{ __('Código') }}</th>             <!-- Codigó del Usuario -->
+            <th scope="col">{{ __('Estado') }}</th>             <!-- Estado del Usuario -->
+            <th scope="col">{{ __('Opciones') }}</th>           <!-- Opción para confirmar o actualizar inscripción -->
             </tr>
         </thead>
         <tbody>
         @foreach ($inscriptions as $inscription)
             <tr>
-            <td>{{ $inscription->inscription->person->last_name_person }} , 
-                {{ $inscription->inscription->person->name_person }}</td>
-            <td>
-            @switch($inscription->inscription->person->type_document)
-                @case(1)
-                    DNI : {{ $inscription->inscription->person->num_document }}
-                    @break
-
-                @case(2)
-                    CARNET DE EXTRANJERIA : {{ $inscription->inscription->person->num_document }}
-                    @break
-
-                @case(3)
-                    PASAPORTE : {{ $inscription->inscription->person->num_document }}
-                    @break
-
-                @case(4)
-                    PART. DE NACIMIENTO-IDENTIDAD : {{ $inscription->inscription->person->num_document }}
-                    @break
-
-                @default
-                    Otros : {{ $inscription->inscription->person->num_document }}
-            @endswitch
-            </td>
-            <td>
-                {{ $inscription->payment_advanced }}
-            </td>
-            <td>
-                {{ $inscription->payment_inscription }}
-            </td>
+            <!-- Nombre completo del Usuario -->
+            <td>{{ $inscription->inscription->person->last_name_person }} , {{ $inscription->inscription->person->name_person }}</td>
+            <!-- Documento del Usuario -->
+            <td> @include('admin.inscription.include.label_document') </td>
+            <!-- Pago Avanzado del Usuario -->
+            <td> {{ $inscription->payment_advanced }} </td>
+            <!-- Pago de Inscripción Usuario -->
+            <td> {{ $inscription->payment_inscription }}</td>
+            <!-- Codigó del Usuario -->
             <td>
                 @if(!is_null($inscription->inscription->code_assistance)) 
                     {{ $inscription->inscription->code_assistance }}
                 @else
-                    @if($inscription->status_pre_inscription == 2)         
-                        <form action="{{ url('/inscriptionConfirm/'.$inscription->inscription->id.'/codigoConfirm') }}" 
-                        method="POST" class="d-inline-block">
-                        @csrf
-                            <button class="btn btn-sm btn-warning" type="submit"  data-toggle="tooltip" title="Ingresar Codigo">
-                                <i class="ni ni-badge"></i>
-                            </button>
-                        </form>
+                    @if($inscription->status_pre_inscription == 2)  
+                        <!-- Boton para ingresar un Código Al Usuario -->
+                        <a href="{{ url('/inscriptionConfirm/'.$inscription->inscription->id.'/codigoConfirm') }}">
+                            <button class="btn btn-sm btn-warning" type="submit"  data-toggle="tooltip" title="Ingresar Codigo"><i class="ni ni-badge"></i></button>
+                        </a>       
                     @else
-                        <span class="badge badge-danger">Pendiente</span>
+                        <span class="badge badge-danger">{{ _('Pendiente') }}</span>
                     @endif 
                 @endif
             </td>
+            <!-- Estado del Usuario -->
+            <td> @include('admin.inscription.include.label_status_pre_inscription') </td>
             <td>
-            @switch($inscription->status_pre_inscription)
-                @case(1)
-                    <span class="badge badge-danger">Pendiente</span>
-                    @break
-
-                @case(2)
-                    <span class="badge badge-primary">Inscrito</span>
-                    @break
-
-                @default
-                    <span class="badge badge-priamry">Pendiente</span>
-            @endswitch
-            </td>
-                <td>
+                <!-- Formulario Para confirmar Inscripción -->
                 <form action="{{ url('/inscriptionConfirm/'.$inscription->id.'/confirm') }}" 
                 method="POST" class="d-inline-block">
                 @csrf
@@ -107,14 +71,18 @@
                         <i class="ni ni-check-bold"></i>
                     </button>
                 </form>
-                <a href="{{ url('/Admininscription/'. $inscription->id .'/edit') }}" class="btn btn-sm btn-default" title="Actualizar Usuario" href="#">Actualizar</a>
-                <a class="btn btn-sm btn-primary" title="Ver Inscripción" href="#">Ver</a>
+                <!-- Fin del Formulario -->
+                <!-- Enlace para actualizar -->
+                <a href="{{ url('/Admininscription/'. $inscription->id .'/edit') }}" class="btn btn-sm btn-default" title="Actualizar Usuario" href="#">{{ __('Actualizar') }}</a>
+                <!-- Enlace para Visializar inscripción -->
+                <a class="btn btn-sm btn-primary" title="Ver Inscripción" href="#">{{ __('Ver') }}</a>
             </td>
             </tr>
         @endforeach
         </tbody>
         </table>
     </div>
+    <!-- Paginación -->
     <div class="card-body">
         {{ $inscriptions->links() }}
     </div>

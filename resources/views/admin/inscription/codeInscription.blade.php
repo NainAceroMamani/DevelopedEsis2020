@@ -5,54 +5,69 @@
     <div class="card-header border-0">
         <div class="row align-items-center">
             <div class="col">
-                <h3 class="mb-0">Usuario #{{ $inscription->person->id }}</h3>
+                <h3 class="mb-0">{{ __('Usuario') }} #{{ $inscription->person->id }}</h3>
+            </div>
+            <div class="col text-right">
+                <!-- Enlace para cancelar -->
+                <a href="{{ url('Admininscription') }}" class="btn btn-sm btn-default">{{ __('Cancelar y volver') }}</a>
             </div>
         </div>
     </div>
+    @if ($errors->any())
+    <div class="card-body">
+        <div class="alert alert-danger" role="alert">
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </div>
+    </div>
+    @endif
     <div class="card-body">
         <ul>
             <li>
-                <strong>Nombre Completo: </strong> {{ $inscription->person->last_name_person }} , {{ $inscription->person->name_person }}
+                <!-- Nombre de Usuario -->
+                <strong>{{ __('Nombre Completo') }}: </strong> {{ $inscription->person->last_name_person }} , {{ $inscription->person->name_person }}
             </li>
             <li>
-                <strong>Documento: </strong>
+                <!-- Apellido de Usuario -->
+                <strong>{{ __('Documento') }}: </strong>
                 @switch($inscription->person->type_document)
                     @case(1)
-                        DNI : {{ $inscription->person->num_document }}
-                        @break
-
+                        <!-- Tipo de Documento DNI -->
+                        {{ __('DNI') }} : {{ $inscription->person->num_document }} @break
                     @case(2)
-                        CARNET DE EXTRANJERIA : {{ $inscription->person->num_document }}
-                        @break
-
+                        <!-- Tipo de Documento CARNET DE EXTRANJERIA -->
+                        {{ __('CARNET DE EXTRANJERIA') }} : {{ $inscription->person->num_document }}  @break
                     @case(3)
-                        PASAPORTE : {{ $inscription->person->num_document }}
-                        @break
-
+                        <!-- Tipo de Documento PASAPORTE -->
+                        {{ __('PASAPORTE') }} : {{ $inscription->person->num_document }}  @break
                     @case(4)
-                        PART. DE NACIMIENTO-IDENTIDAD : {{ $inscription->person->num_document }}
-                        @break
-
+                        <!-- Tipo de Documento PART. DE NACIMIENTO-IDENTIDAD -->
+                        {{ __('PART. DE NACIMIENTO-IDENTIDAD') }} : {{ $inscription->person->num_document }}  @break
                     @default
-                        Otros : {{ $inscription->person->num_document }}
+                        <!-- Tipo de Documento OTROS -->
+                        {{ __('Otros') }} : {{ $inscription->person->num_document }}
                 @endswitch
             </li>
             <li>
-                <strong>Celular: </strong> {{ $inscription->person->phone_person }}
+                <!-- Celular de Usuario -->
+                <strong>{{ __('Celular') }}: </strong> {{ $inscription->person->phone_person }}
             </li>
         </ul>
+        <!-- Formulario para guardar Código de Usuario -->
         <form action="{{ url('/showcodigoConfirm') }}" 
             method="POST">
             @csrf
+            <!-- Código de Usuario -->
             <div class="form-group">
                 <input type="text" class="form-control" placeholder="Ingrese un Código" name="code_assistance">
-                <small id="emailHelp" class="form-text text-muted">El código debe ser distinto para cada usuario.</small>
+                <small id="emailHelp" class="form-text text-muted">{{ __('El código debe ser distinto para cada usuario.') }}</small>
             </div>
+            <!-- Id de Inscripción -->
             <input type="hidden" name="id" value="{{ $inscription->id }}">
-            <button type="submit" class="btn btn-primary">Guardar</button>
-                
-            <a href="{{ url('/Admininscription') }}" class="btn btn-default">Volver</a>
+            <button type="submit" class="btn btn-primary">{{ __('Guardar') }}</button>
         </form>
+        <!-- fin del formulario -->
     </div>
 </div>
 @endsection

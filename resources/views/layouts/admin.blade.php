@@ -105,7 +105,7 @@
                   <img alt="Image placeholder" src="{{ asset('img/ponentes/miguelsolis.JPG') }}">
                 </span>
                 <div class="media-body ml-2 d-none d-lg-block">
-                  <span class="mb-0 text-sm  font-weight-bold">{{ auth()->user()->person->name_person }}</span>
+                  <span class="mb-0 text-sm  font-weight-bold"> @if(isset(auth()->user()->person->name_person)) {{ auth()->user()->person->name_person }} @endif</span>
                 </div>
               </div>
             </a>

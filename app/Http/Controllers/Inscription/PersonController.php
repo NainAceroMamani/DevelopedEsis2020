@@ -25,7 +25,6 @@ class PersonController extends Controller
         if ($countryId) {
             $country = Country::find($countryId);
             $cities = $country->cities;
-            dd($cities);
         } else $cities = collect();
         
         return view('pre_inscription.create', compact('countries', 'cities'));

@@ -24,7 +24,7 @@ Route::middleware(['auth', 'Admin'])->group(function() {
     
     Route::resource('/Admininscription', 'Admin\InscriptionController');
     Route::post('/inscriptionConfirm/{inscription}/confirm', 'Admin\InscriptionController@inscriptionConfirm');
-    Route::post('/inscriptionConfirm/{inscription}/codigoConfirm', 'Admin\InscriptionController@codigoConfirm');
+    Route::get('/inscriptionConfirm/{inscription}/codigoConfirm', 'Admin\InscriptionController@codigoConfirm');
     Route::post('/showcodigoConfirm', 'Admin\InscriptionController@showcodigoConfirm');
 
     Route::get('/codigoQr', 'Admin\CodigoQRController@index');
