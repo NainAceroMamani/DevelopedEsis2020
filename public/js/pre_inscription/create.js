@@ -51,4 +51,9 @@ function onCitiesLoaded(data){
         htmlOptions += `<option value="${data[city].id}">${data[city].name_city}</option>`;
     }
     $city.html(htmlOptions);
+    var x = document.getElementById("city");
+    var option = document.createElement("option");
+    option.text = "Kiwi";
+    x.add(option);
+
 }

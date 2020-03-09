@@ -7,128 +7,106 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
         <script src="https://kit.fontawesome.com/882059baa9.js" crossorigin="anonymous"></script>
-        <!-- Styles -->
-        <link href="{{ asset('css/Styles.css') }}" rel="stylesheet">
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <!-- ----------Styles------ -->
+        
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+        <!-- Nice Select CSS -->
+        <link rel="stylesheet" href="{{ asset('css/niceselect.css') }}">
+        <!-- Fancy Box CSS -->
+        <link rel="stylesheet" href="{{ asset('css/jquery.fancybox.min.css') }}">
+        <!-- Fancy Box CSS -->
+        <link rel="stylesheet" href="{{ asset('css/cube-portfolio.min.css') }}">
+        <!-- Owl Carousel CSS -->
+        <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
+        <!-- Animate CSS -->
+        <link rel="stylesheet" href="{{ asset('css/animate.min.css') }}">
+        <!-- Slick Nav CSS -->
+        <link rel="stylesheet" href="{{ asset('css/slicknav.min.css') }}">
+        <!-- Magnific Popup -->
+        <link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}">
+        <!-- owl carousel min css -->
+        <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
 
+        <!-- Eduland Stylesheet -->
+        <link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
+
+        <!-- Eduland Colors -->
+        <link rel="stylesheet" href="{{ asset('css/colors/color1.css') }}">
+        
         @yield('styles')
+        
     </head>
-    <body>
-        <div class="top-right links">
-            <nav id="main-nav" style="scroll-behavior: smooth;font-size:16px;">
-                <a href="#" id="logo">
-                    <img src="{{ asset('img/logo_ciis.svg') }}" alt="ciistacna">
-                </a>
-                <input type="checkbox" id="responsive-status-menu" name="resposive-status-menu"> 
-                <label for="responsive-status-menu" class="responsive-toggle-menu"> <span class="icon-toggle"></span> </label>
-                <div class="responsive-menu">
-                    <ul class="menu">
-                        <li class="item with-submenu"> <a href="javascript:void(0);">{{ __('Actividades') }}</a>
-                            <ul class="submenu" style="width: 180px;">
-                                <li class="subitem"><a href="#">{{ __('TALLERES DE VERANO') }}</a></li>
-                            </ul>
-                        </li>            
-                        <li class="item with-submenu"> <a href="javascript:void(0);">{{ __('Eventos Anteriores') }}</a>
-                            <ul class="submenu">
-                                <li class="subitem"><a href="http://ciistacna.com/2019/" style="width: 190px;">{{ __('XX CIIS') }}</a></li>
-                                <li class="subitem"><a href="http://ciistacna.com/2018/" style="width: 190px;">{{ __('XIX CIIS') }}</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    
-                    <a href="https://www.facebook.com/ciistacna/" id="call-to-action" target="_blank">
-                        <section class="seccion" style="width:400px;margin-top:-15px">
-                            <div class="cuenta-regresiva contenedor">
-                                <ul class="clearfix">
-                                    <br>
-                                    <li ><p id="dias" class="numero"></p> <span>{{ __('días') }}</span></li>
-                                    <li><p id="horas" class="numero"></p> <span>{{ __('horas') }}</span></li>
-                                    <li><p id="minutos" class="numero"></p> <span>{{ __('minutos') }}</span></li>
-                                    <li><p id="segundos" class="numero"></p> <span>{{ __('segundos') }}</span></li>
-                                </ul>
-                            </div>
-                        </section>
-                    </a>
-                </div>
-            </nav>
-        </div>
+<body>
+
+    @include('include.home.header')
 
     @yield('content')
 
-    <footer id="main-footer" style="font-size: 15px;line-height: 1.15;">
-        <div class="wrapper">
-            <article> 
-                <a href="#" id="logo" style="margin:auto;">
-                    <img src="{{ asset('img/logo_ciis_blank.png') }}" style="width: 83%;" alt="T3chFest">
-                </a>
-                <br><br>
-                <p class="text-justify">{{ __(' El Círculo de Estudios y Responsabilidad Social de la ESIS junto con los estudiantes de la XXVI Promoción de la Escuela Profesional de Ingeniería en Informática y Sistemas 
-                organizan el XXI Congreso Internacional de Informática y Sistemas con el fin de brindarle una gama 
-                de conocimientos, con ponentes del más alto nivel en los distintos campos de Ciencias de la Computación.' )}}</p>
-                <ul style="align-items: center; justify-content: center;">
-                    <li>
-                        <a href="https://www.flickr.com/photos/160684070@N02/albums" target="_blank" title="Flickr de CIIS"><i class="fab fa-flickr"></i></a>
-                    </li>
-                    <li>
-                        <a href="https://www.instagram.com/xx_ciis" target="_blank" title="Instagram de CIIS"><i class="fab fa-instagram"></i></a>
-                    </li>
-                    <li>
-                        <a href="https://www.youtube.com/user/ciistacna" target="_blank" title="YouTube de CIIS"><i class="fab fa-youtube"></i></a>
-                    </li>
-                    <li>
-                        <a href="https://www.facebook.com/ciistacna" target="_blank" title="Facebook de CIIS"><i class="fab fa-facebook"></i></a>
-                    </li>
-                    <li>
-                        <a href="https://twitter.com/ciistacna" target="_blank" title="Twitter de CIIS"><i class="fab fa-twitter"></i></a>
-                    </li>
-                </ul>
-            </article>
-
-            <nav id="footer-nav">
-                <ul >
-                    <li style="list-style: disc;margin-left: 20px;"><a style="padding: 7px 5px;">{{ __('Postmaster') }}</a></li>
-                    <li style="list-style: disc;margin-left: 20px;"><a style="padding: 7px 5px;">{{ __('Cronograma') }}</a></li>
-                    <li style="list-style: disc;margin-left: 20px;"><a style="padding: 7px 5px;">{{ __('Ponentes') }}</a></li>
-                    <li hidden style="list-style: disc;margin-left: 20px;"><a style="padding: 4px 5px;"href="#">{{ __('Primer WIA') }}</a></li>
-                    <li style="list-style: disc;margin-left: 20px;"><a style="padding: 7px 5px;">{{ __('Feria Tecnológica') }}</a></li>
-                </ul>
-                <ul id="contact">
-                    <li><a style="padding: 5px 0;" >{{ __('CONTÁCTENOS') }}</a></li><li>
-                        <a style="padding: 5px 0;" href="javascript:;"><i class="fa fa-home"></i>{{ __('Sede "Los Granados", Avenida Miraflores S/N -Tacna') }}</a>
-                    </li>
-                    <li>
-                        <a style="padding: 5px 0;" href="mailto:ciistacna@unjbg.edu.pe" style="background-image: none;"><i class="far fa-envelope"></i>{{ __('ciistacna@unjbg.edu.pe') }}</a>
-                    </li>
-                    <li>
-                        <a style="padding: 5px 0;" href="javascript:;"><i class="fa fa-phone"></i>{{ __('(052) 583000 Anexo 2005') }}</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-        <div>
-            <p style="text-align:center;">{{ __('Todos los Derechos Reservados 2019-2020 ©') }}
-                <a href="#" style="text-decoration:none;color:white;">
-                    <strong>{{ __('&nbspCírculo de Estudios y Responsabilidad Social de la ESIS') }}</strong>
-                </a>
-            </p>
-        </div>
-    </footer>
+    @include('include.home.footer')
+    
+    <!-- Jquery JS-->
+    
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script src="{{ asset('js/jquery.countdown.min.js') }}"></script>
-  <script>
+    
+    @yield('scripts')
+    
+    <!-- Colors JS-->
+    <script src="{{ asset('js/colors.js') }}"></script>
+    <!-- Popper JS-->
+    <script src="{{ asset('js/popper.min.js') }}"></script>
+    <!-- Bootstrap JS-->
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <!-- Owl Carousel JS-->
+    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+    <!-- Jquery Steller JS -->
+    <script src="{{ asset('js/jquery.stellar.min.js') }}"></script>
+    <!-- Final Countdown JS not used -->
+    <script src="{{ asset('js/finalcountdown.min.js') }}"></script>
+    <!-- Fancy Box JS-->
+    <script src="{{ asset('js/facnybox.min.js') }}"></script>
+    <!-- Magnific Popup JS-->
+    <script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
+    <!-- Circle Progress JS -->
+    <script src="{{ asset('js/circle-progress.min.js') }}"></script>
+    <!-- Nice Select JS -->
+    <script src="{{ asset('js/niceselect.js') }}"></script>
+    <!-- Jquery Steller JS-->
+    <script src="{{ asset('js/jquery.stellar.min.js') }}"></script>
+    <!-- Jquery Steller JS-->
+    <script src="{{ asset('js/cube-portfolio.min.js') }}"></script>
+    <!-- Slick Nav JS-->
+    <script src="{{ asset('js/slicknav.min.js') }}"></script>
+    <!-- Easing JS-->
+    <script src="{{ asset('js/easing.min.js') }}"></script>
+    <!-- Waypoints JS-->
+    <script src="{{ asset('js/waypoints.min.js') }}"></script>
+    <!-- Counter Up JS not used-->
+    <script src="{{ asset('js/jquery.counterup.min.js') }}"></script>
+    <!-- Scroll Up JS-->
+    <script src="{{ asset('js/jquery.scrollUp.min.js') }}"></script>
+    <!-- Gmaps JS-->
+    <script src="{{ asset('js/gmaps.min.js') }}"></script>
+    <!-- Main JS-->
+    <script src="{{ asset('js/main.js') }}"></script>
+    <!-- Video JS-->
+    <script src="//vjs.zencdn.net/6.6.3/video.js"></script>
+    <!-- Countdown JS-->
+    <script src="{{ asset('js/jquery.countdown.min.js') }}"></script>
+
+    <script>
     $('.cuenta-regresiva').countdown('2020/11/09 09:00:00' , function(event){
-		$('#dias').html(event.strftime('%D'));
-		$('#horas').html(event.strftime('%H'));
-		$('#minutos').html(event.strftime('%M'));
-		$('#segundos').html(event.strftime('%S'));
-	});
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  
-  @yield('scripts')
+            $('#dias').html(event.strftime('%D'));
+            $('#horas').html(event.strftime('%H'));
+            $('#minutos').html(event.strftime('%M'));
+            $('#segundos').html(event.strftime('%S'));
+        });
+    </script>
+
 </body>
 
 </html>
